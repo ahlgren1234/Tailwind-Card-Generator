@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Card Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6 text-center">
+            Tailwind Card Generator
+        </h1>
+        <!-- Input area -->
+        <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Customize Your Card</h2>
+            <form id="cardForm">
+                <!-- Title -->
+                <div class="mb-4">
+                    <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                    <input type="text" id="title" name="title" class="mt-1 p-2 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md" placeholder="Card Title" />
+                </div>
+                <!-- Description -->
+                <div class="mb-4">
+                    <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                    <textarea id="description" name="description" class="mt-1 p-2 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md" placeholder="Card description..."></textarea>
+                </div>
+                <!-- Background Color -->
+                <div class="mb-4">
+                    <label for="bgColor" class="block text-sm font-medium text-gray-700">Background Color</label>
+                    <select id="bgColor" name="bgColor" class="mt-1 block w-full p-2 shadow-sm sm:text-sm border border-gray-300 rounded-md">
+                        <option value="bg-white">White</option>
+                        <option value="bg-slate-500">Dark</option>
+                        <option value="bg-blue-100">Blue</option>
+                        <option value="bg-yellow-100">Yellow</option>
+                    </select>
+                </div>
+                <!-- Text Color -->
+                <div class="mb-4">
+                    <label for="textColor" class="block text-sm font-medium text-gray-700">Text Color</label>
+                    <select id="textColor" name="textColor" class="mt-1 block w-full p-2 shadow-sm sm:text-sm border border-gray-300 rounded-md">
+                        <option value="text-gray-800">Gray</option>
+                        <option value="text-white">White</option>
+                        <option value="text-blue-800">Blue</option>
+                        <option value="text-yellow-800">Yellow</option>
+                        <option value="text-red-800">Red</option>
+                    </select>
+                </div>
+                <!-- Button Text -->
+                <div class="mb-4">
+                    <label for="buttonText" class="block text-sm font-medium text-gray-700">Button Text</label>
+                    <input type="text" id="buttonText" name="buttonText" class="mt-1 p-2 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md" placeholder="Click Me">
+                </div>
+                <!-- Button Color -->
+                <div class="mb-4">
+                    <label for="buttonColor" class="block text-sm font-medium text-gray-700">Button Color</label>
+                    <select id="buttonColor" name="buttonColor" class="mt-1 block w-full p-2 shadow-sm sm:text-sm border border-gray-300 rounded-md">
+                        <option value="bg-blue-500 text-white">Blue</option>
+                        <option value="bg-green-500 text-white">Green</option>
+                        <option value="bg-red-500 text-white">Red</option>
+                        <option value="bg-yellow-500 text-white">Yellow</option>
+                    </select>
+                </div>
+                <!-- Preview Button -->
+                <div class="text-right">
+                    <button type="button" id="generateCard" class="px-4 py-2 bg-blue-600 text-white rounded-md shadow-sm">Generate Card</button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Card Preview -->
+        <h2 class="text-2xl font-semibold mb-4">Preview</h2>
+        <div id="cardPreview" class="bg-white shadow-md rounded-lg p-6"></div>
+
+        <!-- Generated Code -->
+        <h2 class="text-2xl font-semibold mt-6 mb-4">Generated Code</h2>
+        <textarea id="generatedCode" class="w-full p-4 border border-gray-300 rounded-md bg-gray-100" rows="10"></textarea>
+        <button type="button" id="copyCode" class="mt-2 px-4 py-2 bg-green-600 text-white rounded-md shadow-sm">Copy to Clipboard</button>
+    </div>
+    <script src="card.js"></script>
+</body>
+</html>
